@@ -6,7 +6,7 @@ require('./auth');
 const app = express();
 
 function isLoggedIn(req, res, next) {
-  //TODO
+  //TODO Activity 3
 }
 
 app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
@@ -18,11 +18,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/auth/google',
-  //TODO
+  //TODO Activity 2
 );
 
 app.get( '/auth/google/callback',
-  //TODO
+  //TODO Activity 2
 );
 
 app.get('/protected', isLoggedIn, (req, res) => {
@@ -30,7 +30,7 @@ app.get('/protected', isLoggedIn, (req, res) => {
 });
 
 app.get('/logout', (req, res) => {
-  //TODO
+  //TODO Activity 2
 });
 
 app.get('/auth/google/failure', (req, res) => {
