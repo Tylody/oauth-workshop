@@ -6,7 +6,7 @@ require('./auth');
 const app = express();
 
 function isLoggedIn(req, res, next) {
-  req.user ? next() : res.sendStatus(401);
+  //TODO
 }
 
 app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
@@ -18,14 +18,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/auth/google',
-  passport.authenticate('google', { scope: [ 'email', 'profile' ] }
-));
+  //TODO
+);
 
 app.get( '/auth/google/callback',
-  passport.authenticate( 'google', {
-    successRedirect: '/protected',
-    failureRedirect: '/auth/google/failure'
-  })
+  //TODO
 );
 
 app.get('/protected', isLoggedIn, (req, res) => {
@@ -33,9 +30,7 @@ app.get('/protected', isLoggedIn, (req, res) => {
 });
 
 app.get('/logout', (req, res) => {
-  req.logout();
-  req.session.destroy();
-  res.send('Goodbye!');
+  //TODO
 });
 
 app.get('/auth/google/failure', (req, res) => {
